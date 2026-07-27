@@ -4,6 +4,10 @@ Shows the daily menu from a [Polkka Aromi Menu](https://aromimenu.cgisaas.fi/) s
 (used by many Finnish daycares/schools/restaurants) as a Home Assistant calendar,
 with one all-day event per day listing that day's meals and dishes.
 
+Also adds three sensors — `sensor.*_breakfast`, `sensor.*_lunch`, `sensor.*_snack` —
+each holding today's dishes for that meal (matched by keyword against the API's meal
+name, so it still works if the site adds other meals like "Afternoon snack").
+
 ## Install
 
 Copy `custom_components/polkka_menu` into your Home Assistant `config/custom_components/`

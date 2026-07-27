@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import Any
 
 DOMAIN = "polkka_menu"
-PLATFORMS = ["calendar"]
+PLATFORMS = ["calendar", "sensor"]
 
 # How far back/forward to pull menu data for the background refresh.
 # async_get_events() always fetches live for whatever range the calendar UI asks for,

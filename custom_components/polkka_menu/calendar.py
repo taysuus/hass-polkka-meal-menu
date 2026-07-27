@@ -8,6 +8,7 @@ from typing import Any
 from homeassistant.components.calendar import CalendarEntity, CalendarEvent
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.util import dt as dt_util
@@ -67,6 +68,11 @@ class PolkkaMenuCalendar(CoordinatorEntity[PolkkaMenuCoordinator], CalendarEntit
         self._entry = entry
         self._client = client
         self._attr_unique_id = f"{entry.entry_id}_menu"
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, entry.entry_id)},
+            name=entry.title,
+            manufacturer="Polkka Aromi Menu",
+        )
 
     @property
     def event(self) -> CalendarEvent | None:
