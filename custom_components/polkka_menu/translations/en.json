@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Polkka Aromi Menu",
+        "description": "On your daycare's Polkka menu page, open the browser dev tools Network tab, reload, and find the POST request to a URL ending in '/RestaurantMeals'. Paste that URL (without the '?Id=...' query string) below, along with the 'Id' query parameter value and the full JSON request body.",
+        "data": {
+          "url": "Request URL (without the query string)",
+          "restaurant_id": "Restaurant ID (the 'Id' query parameter)",
+          "payload": "Request body (JSON)"
+        }
+      },
+      "diet": {
+        "title": "Diet restrictions",
+        "description": "Select any diet restrictions to filter the menu for. Leave empty to show the full, unrestricted menu.",
+        "data": {
+          "diets": "Diet restrictions"
+        }
+      }
+    },
+    "error": {
+      "invalid_payload": "Could not parse the request body as JSON"
+    },
+    "abort": {
+      "already_configured": "This restaurant is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Diet restrictions",
+        "description": "Select any diet restrictions to filter the menu for. Leave empty to show the full, unrestricted menu.",
+        "data": {
+          "diets": "Diet restrictions"
+        }
+      }
+    }
+  }
+}
